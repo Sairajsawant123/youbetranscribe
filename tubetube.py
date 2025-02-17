@@ -28,6 +28,7 @@ def get_video_id(youtube_url):
 # Fetch available languages for transcripts
 def get_available_languages(video_id):
     try:
+        print(video_id)
         transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
         available_languages = {t.language_code: t.language for t in transcript_list}
         return available_languages
